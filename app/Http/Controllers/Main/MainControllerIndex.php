@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\Main;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-class MainPageController extends Controller
+class MainControllerIndex
 {
     public function __invoke()
     {
