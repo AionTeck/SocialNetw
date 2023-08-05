@@ -10,9 +10,9 @@ class LoginControllerStore extends BaseController
 {
     public function __invoke(LoginStore $request)
     {
-        $request->validated();
+        $request->validated($request);
 
         $this->service->LoginStore($request);
-        return view('home.index');
+        return redirect('home');
     }
 }

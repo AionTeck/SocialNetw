@@ -27,9 +27,9 @@ class Service
     }
 
     public function LoginStore($request){
-        if (!Auth::attempt($creditinals = $request->validated())) {
+        if (!Auth::attempt($request->validated())) {
             return back()->withInput();
         }
-        return redirect('/');
+        return redirect('/home');
     }
 }
