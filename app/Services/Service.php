@@ -25,4 +25,11 @@ class Service
 
         Auth::login($user);
     }
+
+    public function LoginStore($request){
+        if (!Auth::attempt($creditinals = $request->validated())) {
+            return back()->withInput();
+        }
+        return redirect('/');
+    }
 }

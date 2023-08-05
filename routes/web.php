@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Communities\CommunitiesControllerIndex;
 use App\Http\Controllers\Friends\FriendsControllerIndex;
+use App\Http\Controllers\Login\LoginControllerIndex;
 use App\Http\Controllers\Main\MainControllerIndex;
 use App\Http\Controllers\Messages\MessagesControllerIndex;
 use App\Http\Controllers\News\NewsControllerCreate;
@@ -21,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/login', [LoginControllerIndex::class, '__invoke'])->name('login.index');
+Route::post('/login', [MainControllerIndex::class, '__invoke'])->name('login.store');
 
 Route::get('/home', [MainControllerIndex::class, '__invoke'])->name('home.index');
 
