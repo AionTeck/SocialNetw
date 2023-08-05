@@ -4,7 +4,9 @@ use App\Http\Controllers\Communities\CommunitiesControllerIndex;
 use App\Http\Controllers\Friends\FriendsControllerIndex;
 use App\Http\Controllers\Main\MainControllerIndex;
 use App\Http\Controllers\Messages\MessagesControllerIndex;
+use App\Http\Controllers\News\NewsControllerCreate;
 use App\Http\Controllers\News\NewsControllerIndex;
+use App\Http\Controllers\News\NewsControllerStore;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +21,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', [MainControllerIndex::class, '__invoke'])->name('home.index');
+
 Route::get('/news', [NewsControllerIndex::class, '__invoke'])->name('news.index');
+Route::get('/news/create', [NewsControllerCreate::class, '__invoke'])->name('news.create');
+Route::post('/news', [NewsControllerStore::class, '__invoke'])->name('news.store');
+
 Route::get('/messages', [MessagesControllerIndex::class, '__invoke'])->name('messages.index');
 Route::get('/friends', [FriendsControllerIndex::class, '__invoke'])->name('friends.index');
 Route::get('/communities', [CommunitiesControllerIndex::class, '__invoke'])->name('communities.index');

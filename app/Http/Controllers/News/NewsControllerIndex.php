@@ -10,6 +10,7 @@ class NewsControllerIndex extends Controller
 {
     public function __invoke()
     {
-        return view('news.index');
+        $posts = new Post;
+        return view('news.index', ['data' => $posts->orderBy('created_at', 'desc')->get()]);
     }
 }
