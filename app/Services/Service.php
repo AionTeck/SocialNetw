@@ -32,4 +32,8 @@ class Service
         }
         return redirect('/home');
     }
+
+    public function UserInfo(){
+        $user = Auth::user();
+    }
 }

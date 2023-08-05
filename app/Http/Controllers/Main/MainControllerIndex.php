@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Main;
 
-class MainControllerIndex
+use App\Models\User;
+
+class MainControllerIndex extends BaseController
 {
     public function __invoke()
     {
