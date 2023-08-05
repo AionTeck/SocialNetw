@@ -33,7 +33,8 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <a href="{{ route('login.index') }}">Have an account?</a>
+            <br><button type="submit" class="btn btn-primary mt-3">Register</button>
         </form>
     </div>
 @endsection
