@@ -3,6 +3,9 @@
 namespace App\Services;
 
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Service
 {
@@ -11,5 +14,15 @@ class Service
             'content'=>$request->content,
         ]);
         $post->save();
+    }
+
+    public function RegisterStore($request){
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        Auth::login($user);
     }
 }

@@ -7,6 +7,8 @@ use App\Http\Controllers\Messages\MessagesControllerIndex;
 use App\Http\Controllers\News\NewsControllerCreate;
 use App\Http\Controllers\News\NewsControllerIndex;
 use App\Http\Controllers\News\NewsControllerStore;
+use App\Http\Controllers\Register\RegisterControllerCreate;
+use App\Http\Controllers\Register\RegisterControllerStore;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', [MainControllerIndex::class, '__invoke'])->name('home.index');
+
+Route::get('/register', [RegisterControllerCreate::class, '__invoke'])->name('register.create');
+Route::post('/register', [RegisterControllerStore::class, '__invoke'])->name('register.store');
 
 Route::get('/news', [NewsControllerIndex::class, '__invoke'])->name('news.index');
 Route::get('/news/create', [NewsControllerCreate::class, '__invoke'])->name('news.create');

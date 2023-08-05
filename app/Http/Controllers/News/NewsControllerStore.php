@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\News;
 
-use App\Http\Requests\Request\NewsStore;
+use App\Http\Requests\News\NewsStore;
 
 class NewsControllerStore extends BaseController
 {
