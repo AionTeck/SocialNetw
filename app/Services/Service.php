@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Post;
+use App\Models\PostTag;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,10 +17,16 @@ class Service
             $author = Auth::user()->name;
         }
         // Запись данных в БД с помощью модели Post
+        $tags = $request['tags'];
+        unset($request['tags']);
+
         $post = Post::create([
             'content'=>$request->content,
             'author' =>$author,
+            'tags'=>''
         ]);
+
+        $post->tags()->attach($tags);
         $post->save();
     }
 

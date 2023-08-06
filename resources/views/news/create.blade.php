@@ -13,6 +13,11 @@
             <label for="content" class="form-label">Enter text of your news</label>
             <textarea class="form-control" id="content" name="content" rows="3"></textarea>
         </div>
+        <select class="form-select" id="tags" multiple aria-label="Multiple select example" name="tags[]">
+            @foreach($tags as $tag)
+                <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+            @endforeach
+        </select>
         <button type="submit" class="btn btn-primary">Add!</button>
     </form>
 

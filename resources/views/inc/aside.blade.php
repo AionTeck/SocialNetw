@@ -47,6 +47,6 @@
                 Communities
             </a>
         </li>
-        <a class="btn btn btn-outline-danger" href="{{ route('logout') }}" role="button">Logout</a>
+        <a class="btn btn btn-outline-danger btn-sm" href="{{ route('logout') }}" role="button">Logout</a>
     </ul>
 </div>
