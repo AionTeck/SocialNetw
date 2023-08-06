@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->boolean('is_published')->default(1);
             $table->timestamps();
-
+            $table->string('author')->nullable();
             $table->softDeletes();
+
 
             $table->unsignedBigInteger('category_id')->nullable();
 

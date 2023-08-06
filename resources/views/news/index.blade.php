@@ -14,7 +14,9 @@
         <div class="alert alert-dark mt-3">
             {{ $el-> content }}
             <br>
-            {{ $el-> created_at }}
+            Created: {{ $el-> created_at }}
+            <br>
+            Author: {{ $el-> author }}
         </div>
     @endforeach
 

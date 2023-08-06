@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\News;
 
 use App\Http\Requests\News\NewsStore;
+use Illuminate\Support\Facades\Auth;
 
 class NewsControllerStore extends BaseController
 {

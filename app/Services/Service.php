@@ -10,8 +10,13 @@ use Illuminate\Support\Facades\Hash;
 class Service
 {
     public function newsStore($request){
+        if (Auth::check()) {
+            $author = Auth::user()->name;
+        }
+
         $post = Post::create([
             'content'=>$request->content,
+            'author' =>$author,
         ]);
         $post->save();
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\News;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class NewsStore extends FormRequest
 {
@@ -22,7 +23,7 @@ class NewsStore extends FormRequest
     public function rules(): array
     {
         return [
-            'content'=>'required|min:3|max:10000'
+            'content'=>'required|min:3|max:10000',
         ];
     }
 }
