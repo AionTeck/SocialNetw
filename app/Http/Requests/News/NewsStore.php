@@ -23,7 +23,9 @@ class NewsStore extends FormRequest
     public function rules(): array
     {
         return [
+            'title'=>'required|min:3|max:10000',
             'content'=>'required|min:3|max:10000',
+            'tags'=>'required'
         ];
     }
 }

@@ -9,10 +9,17 @@
 
     <form action="{{ route('news.store') }}" method="post">
         @csrf
+        <div class="mb-3">
+            <label for="title" class="form-label">Your title</label>
+            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+            @error('title')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
         <div class="form-group mb-3">
             <label for="content" class="form-label">Enter text of your news</label>
             <textarea class="form-control" id="content" name="content" rows="3"></textarea>
-            @error('title')
+            @error('content')
             <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>

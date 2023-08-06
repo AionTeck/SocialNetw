@@ -21,9 +21,9 @@ class Service
         unset($request['tags']);
 
         $post = Post::create([
+            'title'=>$request->title,
             'content'=>$request->content,
             'author' =>$author,
-            'tags'=>''
         ]);
 
         $post->tags()->attach($tags);
