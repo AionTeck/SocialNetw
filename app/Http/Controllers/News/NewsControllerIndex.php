@@ -11,6 +11,7 @@ class NewsControllerIndex extends Controller
     public function __invoke()
     {
         $posts = new Post;
+        // выполнение сортировки по дате создания от новых к старым
         return view('news.index', ['data' => $posts->orderBy('created_at', 'desc')->get()]);
     }
 }

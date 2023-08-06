@@ -10,8 +10,10 @@ class RegisterControllerStore extends BaseController
 {
     public function __invoke(RegisterStore $request)
     {
+        //Передача файлов в отедльный запрос и последующая валидация,
+        // после чего в запрос вносятся уже валидные данные
         $request->validated();
-
+        // Работа с полученными данными в методе RegisterStore класса Service
         $this->service->RegisterStore($request);
         return view('home.index');
     }

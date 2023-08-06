@@ -9,7 +9,9 @@ class NewsControllerStore extends BaseController
 {
     public function __invoke(NewsStore $request)
     {
+        // Валидация данных в отдельном запросе
         $request->validated();
+        // Работа с данными в методе newsStore класса Service
         $this->service->newsStore($request);
 
         return redirect('/news');
