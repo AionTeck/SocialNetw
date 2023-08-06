@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'content',
-        'author'
-    ];
+    protected $guarded = false;
 
     public function tags(){
         return $this->belongsToMany(
