@@ -19,5 +19,8 @@
             Author: {{ $el-> author }}
         </div>
     @endforeach
+    <div>
+        {{ $data->links() }}
+    </div>
 
 @endsection

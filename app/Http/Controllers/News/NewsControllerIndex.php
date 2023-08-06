@@ -10,8 +10,8 @@ class NewsControllerIndex extends Controller
 {
     public function __invoke()
     {
-        $posts = new Post;
+        $data = Post::orderBy('id', 'DESC')->paginate(10);
         // выполнение сортировки по дате создания от новых к старым
-        return view('news.index', ['data' => $posts->orderBy('created_at', 'desc')->get()]);
+        return view('news.index', compact('data'));
     }
 }
