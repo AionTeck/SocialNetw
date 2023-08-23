@@ -6,7 +6,6 @@
 
 @section('content')
     <div class="container-sm mt-5">
-
         @if($errors->any())
             <div class="alert alert-danger">
                 <ul>

@@ -47,6 +47,14 @@
                 Communities
             </a>
         </li>
+        <li>
+            <a href="/admin" class="nav-link text-white">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#people-circle"></use>
+                </svg>
+                Admin page
+            </a>
+        </li>
         <a class="btn btn btn-outline-danger btn-sm" href="{{ route('logout') }}" role="button">Logout</a>
     </ul>
 </div>
